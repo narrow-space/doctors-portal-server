@@ -13,7 +13,7 @@ const { MongoClient, ServerApiVersion } = require("mongodb");
 
 
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.5nhokm7.mongodb.net/`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@doctors-portal.mohic4q.mongodb.net/`;
 
 function verifyToken(req, res, next) {
   const Authorization = req.headers.authorization;
@@ -97,7 +97,7 @@ async function run() {
     app.get("/admin/:email", async (req, res) => {
       const email = req.params.email;
       const user = await userCollections.findOne({ email: email });
-      const isAdmin = user.role === "admin";
+      const isAdmin = user?.role === "admin";
       res.send({ admin: isAdmin });
     });
 
