@@ -192,6 +192,7 @@ async function run() {
         const booked = serviceBooking.map((s) => s.slot);
         service.booked = booked;
         const available = service.slots.filter((sr) => !booked.includes(sr));
+       
         service.slots = available;
       });
       res.send(services);
