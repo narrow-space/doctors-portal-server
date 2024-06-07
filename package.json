@@ -11,9 +11,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "engines": {
-    "node":"21.7.2"
-   },
+  "engines": { "node": "20.x" },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
